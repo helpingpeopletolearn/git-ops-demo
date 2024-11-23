@@ -7,3 +7,9 @@ jobs:
         steps:
         - name: Welcome to my workflow
           run: echo "Welcome"
+
+        - name: List files
+          run: ls
+
+        - name: Read file
+          run: cat README.md
