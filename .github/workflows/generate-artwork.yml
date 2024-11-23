@@ -5,14 +5,10 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
-        - name: Install CowSay
-          run: sudo apt install cowsay -y
+        - name: Checkout repo
+          uses: actions/checkout@v4
 
-        - name: Generate ASCII Artwork
-          run: cowsay -f dragon " Run for me...I am dragon who breaths fire.." >> dragon.txt
-
-        - name: Test File
-          run: grep -i "dragon" dragon.txt
-
-        - name: Cat Dragon file
-          run: cat dragon.txt
+        - name: Run script
+          run: |
+            chmod +x dragon.sh
+            ./dragon.sh
