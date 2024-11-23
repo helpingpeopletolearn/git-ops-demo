@@ -12,3 +12,13 @@ jobs:
           run: |
             chmod +x dragon.sh
             ./dragon.sh
+    second_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sample step from second job
+          run: grep -i "dragon" dragon.txt
+    third_job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: sample step from third job
+          run: cat dragon.txt
